@@ -1,0 +1,338 @@
+---
+import Layout from 'layouts/Layout.astro';
+---
+
+<Layout
+  title="联系我们"
+  description="联系VLINKA获取智能会议设备咨询、产品报价和技术支持。"
+  navDarkMode={true}
+>
+  <!-- Page Header -->
+  <section class="page-header" data-theme-section="dark">
+    <div class="container">
+      <h1>联系我们</h1>
+      <p class="page-description">我们期待与您交流，为您提供专业的会议解决方案</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-contact" data-bg-section="light">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>发送消息</h2>
+          <p class="form-description">请填写以下表单，我们会尽快与您联系</p>
+
+          <form class="contact-form styled-form" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">姓名 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="您的姓名" />
+              </div>
+              <div class="form-field">
+                <label for="company">公司名称</label>
+                <input type="text" id="company" name="company" placeholder="您的公司" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">邮箱 <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="您的邮箱地址" />
+              </div>
+              <div class="form-field">
+                <label for="phone">电话</label>
+                <input type="tel" id="phone" name="phone" placeholder="您的联系电话" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="subject">咨询主题 <span class="required">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>请选择咨询主题</option>
+                <option value="product">产品咨询</option>
+                <option value="solution">解决方案咨询</option>
+                <option value="quote">报价请求</option>
+                <option value="support">技术支持</option>
+                <option value="partnership">合作洽谈</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message">详细描述 <span class="required">*</span></label>
+              <textarea id="message" name="message" required placeholder="请描述您的需求或问题" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">提交</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>联系方式</h2>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>邮箱</h4>
+                <a href="mailto:info@vlinka.com">info@vlinka.com</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>官方网站</h4>
+                <a href="http://vlinka.com" target="_blank" rel="noopener noreferrer">vlinka.com</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>工作时间</h4>
+                <p>周一至周五: 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-inquiry">
+            <h3>快速咨询</h3>
+            <p>如果您有紧急需求，可以直接通过邮件联系我们的销售团队获取即时响应。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: calc(var(--nav-bar-height) + var(--section-padding));
+    padding-bottom: var(--section-padding);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .page-header .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: 0.25em;
+  }
+
+  .page-description {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3em;
+  }
+
+  @media screen and (max-width: 860px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2em;
+    }
+  }
+
+  /* Contact Form */
+  .contact-form-wrapper h2 {
+    margin-bottom: 0.5em;
+  }
+
+  .form-description {
+    color: var(--color-text);
+    margin-bottom: 1.5em;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  @media screen and (max-width: 540px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-field {
+    margin-bottom: 1em;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--color-dark);
+    margin-bottom: 0.5em;
+  }
+
+  .form-field .required {
+    color: var(--color-primary);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 0.75em 1em;
+    font-size: 0.95em;
+    border: 1px solid var(--color-border);
+    border-radius: calc(var(--border-radius) * 0.5);
+    background-color: var(--color-white);
+    transition: border-color var(--animation-primary);
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    display: inline-block;
+    padding: 0.75em 2em;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: transform var(--animation-primary), box-shadow var(--animation-primary);
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.4);
+  }
+
+  /* Contact Info */
+  .contact-info h2 {
+    margin-bottom: 1.5em;
+  }
+
+  .info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1.25em;
+    background-color: var(--color-light-tint);
+    border-radius: calc(var(--border-radius) * 1);
+  }
+
+  .info-icon {
+    width: 2.5em;
+    height: 2.5em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: calc(var(--border-radius) * 0.5);
+  }
+
+  .info-icon svg {
+    width: 1.2em;
+    height: 1.2em;
+    stroke: var(--color-white);
+  }
+
+  .info-content h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.25em;
+  }
+
+  .info-content a,
+  .info-content p {
+    font-size: 0.95em;
+    color: var(--color-text);
+  }
+
+  .info-content a {
+    text-decoration: none;
+    transition: color var(--animation-primary);
+  }
+
+  .info-content a:hover {
+    color: var(--color-primary);
+  }
+
+  .quick-inquiry {
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: rgba(var(--color-primary-rgb), 0.08);
+    border-radius: calc(var(--border-radius) * 1);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .quick-inquiry h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.5em;
+  }
+
+  .quick-inquiry p {
+    font-size: 0.9em;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+</style>

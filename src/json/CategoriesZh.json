@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "beamforming-speakerphone",
+      "name": "波束成形扬声器",
+      "description": "AI驱动的智能会议扬声器系统，集成降噪、去混响等先进技术",
+      "order": 1
+    },
+    {
+      "id": "ai-array-microphone",
+      "name": "AI阵列麦克风",
+      "description": "高清360度拾音麦克风系统，支持定向覆盖和智能降噪",
+      "order": 2
+    },
+    {
+      "id": "ceiling-array-microphone",
+      "name": "天花板阵列麦克风",
+      "description": "专业级天花板安装麦克风解决方案，支持IP级联",
+      "order": 3
+    },
+    {
+      "id": "smart-conference-system",
+      "name": "智能会议系统",
+      "description": "一体化智能会议解决方案，支持分布式扩展",
+      "order": 4
+    },
+    {
+      "id": "video-bar",
+      "name": "视频条",
+      "description": "集成4K摄像头和音频系统的一体化视频会议设备",
+      "order": 5
+    }
+  ]
+}

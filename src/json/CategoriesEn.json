@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "beamforming-speakerphone",
+      "name": "Beamforming Speakerphones",
+      "description": "AI-powered smart conference speakerphone systems with advanced noise reduction and dereverberation",
+      "order": 1
+    },
+    {
+      "id": "ai-array-microphone",
+      "name": "AI Array Microphones",
+      "description": "High-definition 360-degree audio pickup microphone systems with directional coverage and smart noise reduction",
+      "order": 2
+    },
+    {
+      "id": "ceiling-array-microphone",
+      "name": "Ceiling Array Microphones",
+      "description": "Professional ceiling-mounted microphone solutions with IP cascade support",
+      "order": 3
+    },
+    {
+      "id": "smart-conference-system",
+      "name": "Smart Conference Systems",
+      "description": "Integrated smart conferencing solutions with distributed expansion capability",
+      "order": 4
+    },
+    {
+      "id": "video-bar",
+      "name": "Video Bars",
+      "description": "All-in-one video conferencing devices with integrated 4K camera and audio system",
+      "order": 5
+    }
+  ]
+}

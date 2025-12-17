@@ -1,0 +1,40 @@
+{
+  "solutions": [
+    {
+      "id": "mc20-application",
+      "slug": "mc20-application-solution",
+      "title": "MC20 Application Solution",
+      "subtitle": "Professional Audio Pickup Solution",
+      "date": "2024-05-29",
+      "description": "MC20 utilizes multi-microphone arrays and beamforming technology for exceptionally clear and natural voice pickup with excellent noise reduction. Effective in glass rooms and high-ceiling spaces.",
+      "fullDescription": "The MC20 series array microphone adopts advanced multi-microphone array design and beamforming technology, delivering clear and natural voice pickup in various complex acoustic environments. Whether in glass-walled conference rooms or high-ceiling conference halls, MC20 effectively eliminates environmental noise and reverberation, ensuring every participant's voice is clearly captured and transmitted.",
+      "advantages": [
+        { "title": "Multi-Microphone Array", "description": "Omnidirectional voice capture with no dead zones" },
+        { "title": "Beamforming Technology", "description": "Precise target voice localization and pickup" },
+        { "title": "Excellent Noise Reduction", "description": "Effective environmental noise elimination" },
+        { "title": "Complex Environment Adaptation", "description": "Outstanding performance in glass rooms and high-ceiling spaces" }
+      ],
+      "applications": ["Glass-walled conference rooms", "High-ceiling conference halls", "Open office spaces", "Classrooms and lecture halls"],
+      "relatedProducts": ["mc20", "mc20plus", "mc20r"],
+      "featured": true
+    },
+    {
+      "id": "array-microphone-mc20",
+      "slug": "array-microphone-mc20-solution",
+      "title": "Array Microphone MC20 Solution",
+      "subtitle": "Advanced Audio Pickup Technology Solution",
+      "date": "2024-05-24",
+      "description": "Advanced audio pickup technology suitable for various meeting and teaching scenarios, featuring multi-microphone array design, beamforming technology and intelligent audio processing.",
+      "fullDescription": "The MC20 array microphone solution is designed for modern meeting and teaching environments, integrating multiple advanced audio technologies. Multi-microphone array design enables omnidirectional sound capture, beamforming technology ensures precise pickup of target speakers, and intelligent audio processing automatically optimizes audio quality to adapt to challenging acoustic environments.",
+      "advantages": [
+        { "title": "Multi-Microphone Array Design", "description": "Enables omnidirectional sound capture" },
+        { "title": "Beamforming Technology", "description": "Precise target speaker localization" },
+        { "title": "Intelligent Audio Processing", "description": "Automatic audio quality optimization" },
+        { "title": "Challenging Environment Adaptation", "description": "Effective handling of complex acoustic conditions" }
+      ],
+      "applications": ["Enterprise conference rooms", "Educational training centers", "Video conferencing scenarios", "Remote collaboration environments"],
+      "relatedProducts": ["mc20", "mc20plus"],
+      "featured": true
+    }
+  ]
+}

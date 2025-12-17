@@ -1,0 +1,242 @@
+---
+const pathname = Astro.url.pathname;
+const isChinesePage = pathname.startsWith('/cn/') || pathname === '/cn';
+const langPrefix = isChinesePage ? '/cn' : '/en';
+
+// Product links
+const productLinks = isChinesePage
+  ? [
+      { text: "波束成形扬声器", link: `${langPrefix}/products#beamforming-speakerphone` },
+      { text: "AI阵列麦克风", link: `${langPrefix}/products#ai-array-microphone` },
+      { text: "天花板麦克风", link: `${langPrefix}/products#ceiling-array-microphone` },
+      { text: "智能会议系统", link: `${langPrefix}/products#smart-conference-system` },
+      { text: "视频条", link: `${langPrefix}/products#video-bar` },
+    ]
+  : [
+      { text: "Beamforming Speakerphones", link: `${langPrefix}/products#beamforming-speakerphone` },
+      { text: "AI Array Microphones", link: `${langPrefix}/products#ai-array-microphone` },
+      { text: "Ceiling Microphones", link: `${langPrefix}/products#ceiling-array-microphone` },
+      { text: "Smart Conference Systems", link: `${langPrefix}/products#smart-conference-system` },
+      { text: "Video Bars", link: `${langPrefix}/products#video-bar` },
+    ];
+
+// Quick links
+const quickLinks = isChinesePage
+  ? [
+      { text: "首页", link: `${langPrefix}/` },
+      { text: "解决方案", link: `${langPrefix}/solutions` },
+      { text: "关于我们", link: `${langPrefix}/about` },
+      { text: "联系我们", link: `${langPrefix}/contact` },
+    ]
+  : [
+      { text: "Home", link: `${langPrefix}/` },
+      { text: "Solutions", link: `${langPrefix}/solutions` },
+      { text: "About Us", link: `${langPrefix}/about` },
+      { text: "Contact", link: `${langPrefix}/contact` },
+    ];
+
+const labels = isChinesePage
+  ? {
+      products: "产品中心",
+      quickLinks: "快速链接",
+      contact: "联系我们",
+      email: "邮箱",
+      address: "地址",
+      description: "VLINKA专注于提供先进的AI驱动音视频会议设备和解决方案，为企业和机构打造高效的智能会议体验。",
+      copyright: `© ${new Date().getFullYear()} VLINKA. 保留所有权利。`,
+    }
+  : {
+      products: "Products",
+      quickLinks: "Quick Links",
+      contact: "Contact Us",
+      email: "Email",
+      address: "Address",
+      description: "VLINKA specializes in advanced AI-driven audio/video conferencing equipment and solutions, delivering efficient smart meeting experiences for enterprises and institutions.",
+      copyright: `© ${new Date().getFullYear()} VLINKA. All rights reserved.`,
+    };
+---
+
+<footer class="section footer" data-theme-section="dark" data-bg-section="dark">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <span class="footer-logo">VLINKA</span>
+        <p class="footer-description">{labels.description}</p>
+      </div>
+
+      <!-- Products Column -->
+      <div class="footer-column">
+        <h5>{labels.products}</h5>
+        <div class="footer-links">
+          {productLinks.map((link) => (
+            <a href={link.link}>{link.text}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h5>{labels.quickLinks}</h5>
+        <div class="footer-links">
+          {quickLinks.map((link) => (
+            <a href={link.link}>{link.text}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h5>{labels.contact}</h5>
+        <div class="footer-links">
+          <div class="contact-item">
+            <span class="contact-label">{labels.email}</span>
+            <a href="mailto:info@vlinka.com">info@vlinka.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">{labels.copyright}</p>
+      <div class="footer-social">
+        <a href="http://vlinka.com" target="_blank" rel="noopener noreferrer" aria-label="Website">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding-top: calc(var(--section-padding) * 0.75);
+    padding-bottom: calc(var(--section-padding) * 0.5);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 3em;
+  }
+
+  @media screen and (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2em;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .footer-logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .footer-description {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  .footer-column h5 {
+    color: var(--color-white);
+    margin-bottom: 1em;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .footer-links a {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color var(--animation-primary);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+  }
+
+  .contact-label {
+    font-size: 0.75em;
+    color: rgba(var(--color-white-rgb), 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-bottom {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgba(var(--color-white-rgb), 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 540px) {
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1em;
+      text-align: center;
+    }
+  }
+
+  .footer-copyright {
+    font-size: 0.85em;
+    color: var(--color-text-light);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1em;
+  }
+
+  .footer-social a {
+    width: 2.25em;
+    height: 2.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(var(--color-white-rgb), 0.1);
+    transition: background-color var(--animation-primary);
+  }
+
+  .footer-social a:hover {
+    background-color: var(--color-primary);
+  }
+
+  .footer-social svg {
+    width: 1em;
+    height: 1em;
+    stroke: var(--color-white);
+  }
+</style>

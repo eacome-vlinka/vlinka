@@ -1,0 +1,138 @@
+---
+import Layout from 'layouts/Layout.astro';
+import Button from 'components/Button.astro';
+---
+
+<Layout title="About Us" description="Learn about VLINKA - a professional manufacturer specializing in AI-driven smart audio/video conferencing equipment and solutions." navDarkMode={true}>
+  <section class="page-header" data-theme-section="dark">
+    <div class="container">
+      <h1>About VLINKA</h1>
+      <p class="page-description">Smart Audio/Video Conferencing Solution Experts</p>
+    </div>
+  </section>
+
+  <section class="section section-about" data-bg-section="light">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Our Mission</h2>
+          <p>VLINKA is dedicated to providing advanced AI-driven audio/video conferencing equipment and solutions for enterprises and institutions worldwide. We believe effective communication is the cornerstone of success, and exceptional meeting experiences are key to achieving effective communication.</p>
+          <p>Through continuous technological innovation and unwavering commitment to quality, we have developed a comprehensive product line including beamforming speakerphones, AI array microphones, ceiling microphones, smart conference systems, and video bars, meeting diverse needs from small meeting rooms to large conference halls.</p>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-values" data-bg-section="light-tint">
+    <div class="container">
+      <h2>Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3>Innovation</h3>
+          <p>Continuously investing in R&D, deeply integrating AI technology with audio/video solutions to create industry-leading smart meeting products.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Quality First</h3>
+          <p>Rigorous quality control systems ensure every product meets industry-leading performance standards.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Customer Focus</h3>
+          <p>Deep understanding of customer needs, providing customized solutions and professional after-sales support.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3>Global Vision</h3>
+          <p>Serving the global market, providing professional conferencing solutions for enterprises and institutions worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stats" data-bg-section="dark" data-theme-section="dark">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-value">13+</span><span class="stat-label">Product Lines</span></div>
+        <div class="stat-item"><span class="stat-value">5</span><span class="stat-label">Product Categories</span></div>
+        <div class="stat-item"><span class="stat-value">100+</span><span class="stat-label">Enterprise Clients</span></div>
+        <div class="stat-item"><span class="stat-value">24/7</span><span class="stat-label">Technical Support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cta" data-bg-section="light">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Partner With Us</h2>
+        <p>Whether you need a single product or a complete conferencing solution, we can provide professional support</p>
+        <Button text="Contact Us" link="/en/contact" variant="primary" size="xl" />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header { padding-top: calc(var(--nav-bar-height) + var(--section-padding)); padding-bottom: var(--section-padding); background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%); position: relative; }
+  .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 40%); pointer-events: none; }
+  .page-header .container { position: relative; z-index: 2; }
+  .page-header h1 { color: var(--color-white); margin-bottom: 0.25em; }
+  .page-description { font-size: 1.1em; color: var(--color-text-light); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: center; }
+  @media screen and (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 2em; } }
+  .about-content h2 { margin-bottom: 1em; }
+  .about-content p { font-size: 1em; line-height: 1.8; margin-bottom: 1em; }
+  .about-image .image-placeholder { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%); border-radius: calc(var(--border-radius) * 2); display: flex; align-items: center; justify-content: center; }
+  .image-placeholder svg { width: 4em; height: 4em; stroke: rgba(var(--color-white-rgb), 0.3); }
+
+  .section-values h2 { text-align: center; margin-bottom: 2em; }
+  .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; }
+  .value-card { padding: 1.5em; background-color: var(--color-white); border-radius: calc(var(--border-radius) * 1.5); border: 1px solid var(--color-border); text-align: center; }
+  .value-icon { width: 3em; height: 3em; margin: 0 auto 1em; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: 50%; }
+  .value-icon svg { width: 1.5em; height: 1.5em; stroke: var(--color-white); }
+  .value-card h3 { font-family: 'Manrope', sans-serif; font-size: 1.1em; font-weight: 600; color: var(--color-dark); margin-bottom: 0.5em; }
+  .value-card p { font-size: 0.9em; color: var(--color-text); line-height: 1.6; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2em; text-align: center; }
+  @media screen and (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-value { font-family: 'Manrope', sans-serif; font-size: 3em; font-weight: 700; color: var(--color-primary); display: block; line-height: 1; }
+  .stat-label { font-size: 1em; color: var(--color-text-light); margin-top: 0.5em; display: block; }
+
+  .section-cta { text-align: center; }
+  .cta-content h2 { margin-bottom: 0.5em; }
+  .cta-content p { color: var(--color-text); margin-bottom: 1.5em; max-width: 600px; margin-left: auto; margin-right: auto; }
+</style>

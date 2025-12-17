@@ -1,0 +1,96 @@
+---
+import Layout from 'layouts/Layout.astro';
+import ProductCard from 'components/ProductCard.astro';
+import CategoryNav from 'components/CategoryNav.astro';
+
+import productsData from 'json/ProductsZh.json';
+import categoriesData from 'json/CategoriesZh.json';
+
+const products = productsData.products;
+const categories = categoriesData.categories;
+---
+
+<Layout
+  title="产品中心"
+  description="浏览VLINKA全系列智能会议设备，包括波束成形扬声器、AI阵列麦克风、天花板麦克风、智能会议系统和视频条。"
+  navDarkMode={true}
+>
+  <!-- Page Header -->
+  <section class="page-header" data-theme-section="dark">
+    <div class="container">
+      <h1>产品中心</h1>
+      <p class="page-description">探索我们的全系列智能会议设备，为您的会议室打造专业音视频体验</p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section section-products" data-bg-section="light-tint">
+    <div class="container">
+      <CategoryNav
+        categories={categories}
+        allLabel="全部产品"
+      />
+
+      <div class="products-grid">
+        {products.map((product) => {
+          const category = categories.find(c => c.id === product.category);
+          return (
+            <ProductCard
+              id={product.id}
+              name={product.name}
+              fullName={product.fullName}
+              category={product.category}
+              categoryName={category?.name || ''}
+              shortDescription={product.shortDescription}
+              image={product.image}
+              link={`/cn/products/${product.slug}`}
+            />
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: calc(var(--nav-bar-height) + var(--section-padding));
+    padding-bottom: var(--section-padding);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .page-header .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: 0.25em;
+  }
+
+  .page-description {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    max-width: 600px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin-top: 1em;
+  }
+</style>

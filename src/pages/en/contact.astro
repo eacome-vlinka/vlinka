@@ -1,0 +1,146 @@
+---
+import Layout from 'layouts/Layout.astro';
+---
+
+<Layout title="Contact Us" description="Contact VLINKA for smart conferencing equipment consultation, product quotes, and technical support." navDarkMode={true}>
+  <section class="page-header" data-theme-section="dark">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="page-description">We look forward to connecting with you and providing professional conferencing solutions</p>
+    </div>
+  </section>
+
+  <section class="section section-contact" data-bg-section="light">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-wrapper">
+          <h2>Send a Message</h2>
+          <p class="form-description">Fill out the form below and we'll get back to you as soon as possible</p>
+          <form class="contact-form styled-form" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Your name" />
+              </div>
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Your email address" />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject <span class="required">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="product">Product Inquiry</option>
+                <option value="solution">Solution Consultation</option>
+                <option value="quote">Quote Request</option>
+                <option value="support">Technical Support</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" required placeholder="Describe your needs or questions" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Email</h4>
+                <a href="mailto:info@vlinka.com">info@vlinka.com</a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Website</h4>
+                <a href="http://vlinka.com" target="_blank" rel="noopener noreferrer">vlinka.com</a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="quick-inquiry">
+            <h3>Quick Inquiry</h3>
+            <p>For urgent needs, you can directly contact our sales team via email for immediate response.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header { padding-top: calc(var(--nav-bar-height) + var(--section-padding)); padding-bottom: var(--section-padding); background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%); position: relative; }
+  .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 40%); pointer-events: none; }
+  .page-header .container { position: relative; z-index: 2; }
+  .page-header h1 { color: var(--color-white); margin-bottom: 0.25em; }
+  .page-description { font-size: 1.1em; color: var(--color-text-light); }
+
+  .contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3em; }
+  @media screen and (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 2em; } }
+
+  .contact-form-wrapper h2 { margin-bottom: 0.5em; }
+  .form-description { color: var(--color-text); margin-bottom: 1.5em; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+  @media screen and (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+  .form-field { margin-bottom: 1em; }
+  .form-field label { display: block; font-size: 0.9em; font-weight: 500; color: var(--color-dark); margin-bottom: 0.5em; }
+  .form-field .required { color: var(--color-primary); }
+  .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 0.75em 1em; font-size: 0.95em; border: 1px solid var(--color-border); border-radius: calc(var(--border-radius) * 0.5); background-color: var(--color-white); transition: border-color var(--animation-primary); }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--color-primary); }
+  .form-field textarea { resize: vertical; min-height: 120px; }
+  .submit-btn { display: inline-block; padding: 0.75em 2em; font-family: 'Manrope', sans-serif; font-size: 1em; font-weight: 600; color: var(--color-white); background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border: none; border-radius: var(--border-radius); cursor: pointer; transition: transform var(--animation-primary), box-shadow var(--animation-primary); }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.4); }
+
+  .contact-info h2 { margin-bottom: 1.5em; }
+  .info-cards { display: flex; flex-direction: column; gap: 1em; }
+  .info-card { display: flex; align-items: flex-start; gap: 1em; padding: 1.25em; background-color: var(--color-light-tint); border-radius: calc(var(--border-radius) * 1); }
+  .info-icon { width: 2.5em; height: 2.5em; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: calc(var(--border-radius) * 0.5); }
+  .info-icon svg { width: 1.2em; height: 1.2em; stroke: var(--color-white); }
+  .info-content h4 { font-family: 'Manrope', sans-serif; font-size: 0.9em; font-weight: 600; color: var(--color-dark); margin-bottom: 0.25em; }
+  .info-content a, .info-content p { font-size: 0.95em; color: var(--color-text); }
+  .info-content a { text-decoration: none; transition: color var(--animation-primary); }
+  .info-content a:hover { color: var(--color-primary); }
+  .quick-inquiry { margin-top: 2em; padding: 1.5em; background-color: rgba(var(--color-primary-rgb), 0.08); border-radius: calc(var(--border-radius) * 1); border-left: 3px solid var(--color-primary); }
+  .quick-inquiry h3 { font-family: 'Manrope', sans-serif; font-size: 1em; font-weight: 600; color: var(--color-dark); margin-bottom: 0.5em; }
+  .quick-inquiry p { font-size: 0.9em; color: var(--color-text); line-height: 1.6; }
+</style>

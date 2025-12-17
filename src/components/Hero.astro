@@ -1,0 +1,159 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  ctaText,
+  ctaLink,
+  secondaryCtaText,
+  secondaryCtaLink,
+  backgroundImage
+} = Astro.props;
+---
+
+<section class="section section-hero" data-theme-section="dark">
+  {backgroundImage && (
+    <img src={backgroundImage} alt="" class="hero-bg" />
+  )}
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      {subtitle && <span class="hero-eyebrow">{subtitle}</span>}
+      <h1>{title}</h1>
+      {description && <p class="hero-description">{description}</p>}
+
+      {(ctaText || secondaryCtaText) && (
+        <div class="hero-actions">
+          {ctaText && ctaLink && (
+            <a href={ctaLink} class="btn primary xl">
+              <span class="btn-click">
+                <span class="btn-content">
+                  <span class="btn-fill"></span>
+                  <span>{ctaText}</span>
+                </span>
+              </span>
+            </a>
+          )}
+          {secondaryCtaText && secondaryCtaLink && (
+            <a href={secondaryCtaLink} class="btn outline xl">
+              <span class="btn-click">
+                <span class="btn-content duplicate">
+                  <span class="btn-fill"></span>
+                  <span>{secondaryCtaText}</span>
+                </span>
+                <span class="border-box"></span>
+              </span>
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    overflow: hidden;
+    padding-top: calc(var(--nav-bar-height) + var(--section-padding));
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(var(--color-primary-rgb), 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(var(--color-secondary-rgb), 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1em;
+  }
+
+  .section-hero h1 {
+    color: var(--color-white);
+    margin-bottom: 0.5em;
+    font-size: calc(var(--title-size) * 0.7);
+  }
+
+  @media screen and (max-width: 540px) {
+    .section-hero h1 {
+      font-size: calc(var(--title-size) * 0.5);
+    }
+  }
+
+  .hero-description {
+    font-size: 1.15em;
+    color: var(--color-text-light);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 2em;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .hero-actions .btn {
+    display: inline-flex;
+  }
+
+  .hero-actions .btn span {
+    color: var(--color-white);
+  }
+
+  .hero-actions .btn.outline .border-box {
+    border-color: rgba(var(--color-white-rgb), 0.3);
+  }
+
+  .hero-actions .btn.outline .btn-fill {
+    background: transparent;
+  }
+
+  .hero-actions .btn.outline:hover .btn-fill {
+    background: rgba(var(--color-white-rgb), 0.1);
+  }
+</style>

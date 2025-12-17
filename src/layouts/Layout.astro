@@ -1,0 +1,63 @@
+---
+// Components
+import Header from 'components/Header.astro';
+import Footer from 'components/Footer.astro';
+import Seo from 'components/Seo.astro';
+
+// Styles
+import 'styles/Normalize.scss';
+import 'styles/Fonts.scss';
+import 'styles/StyleGuide.scss';
+import 'styles/Components.scss';
+
+interface Props {
+	title: string;
+	description: string;
+    noindex?: boolean;
+	navDarkMode?: boolean;
+	image?: string;
+}
+
+const { title, description, noindex, navDarkMode, image } = Astro.props;
+
+// Detect language from URL
+const pathname = Astro.url.pathname;
+const isChinesePage = pathname.startsWith('/cn/') || pathname === '/cn';
+const lang = isChinesePage ? 'zh-CN' : 'en';
+---
+
+<!doctype html>
+<html lang={lang} class="lenis lenis-smooth">
+	<head>
+		<Seo
+			title={title}
+			description={description}
+			noindex={noindex}
+			image={image}
+		/>
+	</head>
+
+	<body
+		data-theme-page="light"
+		data-navigation-status="not-active"
+		data-theme-nav={navDarkMode ? 'dark' : 'light'}
+		data-scrolling-started="false"
+		data-scrolling-direction="down"
+	>
+
+		<Header />
+
+		<main id="main" class="main">
+	  		<slot />
+		</main>
+
+		<Footer />
+
+		<script defer src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script defer src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+		<script defer src="/js/ScrollTrigger.min.js"></script>
+		<script defer src="/js/Animations.js"></script>
+
+	</body>
+</html>

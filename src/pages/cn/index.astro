@@ -1,0 +1,267 @@
+---
+import Layout from 'layouts/Layout.astro';
+import Hero from 'components/Hero.astro';
+import ProductCard from 'components/ProductCard.astro';
+import SolutionCard from 'components/SolutionCard.astro';
+import Button from 'components/Button.astro';
+
+import productsData from 'json/ProductsZh.json';
+import categoriesData from 'json/CategoriesZh.json';
+import solutionsData from 'json/SolutionsZh.json';
+
+const featuredProducts = productsData.products.filter(p => p.featured);
+const categories = categoriesData.categories;
+const solutions = solutionsData.solutions;
+---
+
+<Layout
+  title="智能音视频会议解决方案"
+  description="VLINKA专注于提供先进的AI驱动音视频会议设备和解决方案，包括波束成形扬声器、阵列麦克风、天花板麦克风等专业会议设备。"
+  navDarkMode={true}
+>
+  <!-- Hero Section -->
+  <Hero
+    subtitle="智能会议专家"
+    title="AI驱动的音视频会议解决方案"
+    description="VLINKA专注于为企业和机构提供先进的智能会议设备，集成AI降噪、波束成形、去混响等前沿技术，打造高效的会议体验。"
+    ctaText="浏览产品"
+    ctaLink="/cn/products"
+    secondaryCtaText="了解解决方案"
+    secondaryCtaLink="/cn/solutions"
+  />
+
+  <!-- Product Categories -->
+  <section class="section section-categories" data-bg-section="light">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">产品类别</span>
+        <h2>专业会议设备</h2>
+        <p class="section-description">覆盖会议室音视频需求的全系列产品</p>
+      </div>
+
+      <div class="categories-grid">
+        {categories.map((category) => (
+          <a href={`/cn/products#${category.id}`} class="category-card">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <h3>{category.name}</h3>
+            <p>{category.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section section-products" data-bg-section="light-tint">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">精选产品</span>
+        <h2>热门产品</h2>
+        <p class="section-description">探索我们最受欢迎的智能会议设备</p>
+      </div>
+
+      <div class="products-grid">
+        {featuredProducts.slice(0, 6).map((product) => {
+          const category = categories.find(c => c.id === product.category);
+          return (
+            <ProductCard
+              id={product.id}
+              name={product.name}
+              fullName={product.fullName}
+              category={product.category}
+              categoryName={category?.name || ''}
+              shortDescription={product.shortDescription}
+              image={product.image}
+              link={`/cn/products/${product.slug}`}
+            />
+          );
+        })}
+      </div>
+
+      <div class="section-cta">
+        <Button text="查看全部产品" link="/cn/products" variant="outline" size="xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Preview -->
+  <section class="section section-solutions" data-bg-section="dark" data-theme-section="dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">解决方案</span>
+        <h2>专业解决方案</h2>
+        <p class="section-description">针对不同场景的定制化会议解决方案</p>
+      </div>
+
+      <div class="solutions-grid">
+        {solutions.map((solution) => (
+          <SolutionCard
+            id={solution.id}
+            title={solution.title}
+            description={solution.description}
+            link={`/cn/solutions/${solution.slug}`}
+          />
+        ))}
+      </div>
+
+      <div class="section-cta">
+        <Button text="了解更多解决方案" link="/cn/solutions" variant="outline" size="xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta-main" data-bg-section="primary" data-theme-section="dark">
+    <div class="container">
+      <div class="cta-content">
+        <h2>准备升级您的会议体验？</h2>
+        <p>联系我们的专业团队，获取定制化的智能会议解决方案</p>
+        <div class="cta-buttons">
+          <Button text="联系我们" link="/cn/contact" variant="light" size="xl" />
+          <Button text="查看产品" link="/cn/products" variant="outline" size="xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section-header {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .section-header .eyebrow {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  .section-header h2 {
+    margin-bottom: 0.5em;
+  }
+
+  .section-description {
+    font-size: 1.1em;
+    color: var(--color-text);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  [data-theme-section="dark"] .section-description {
+    color: var(--color-text-light);
+  }
+
+  /* Categories Grid */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5em;
+  }
+
+  .category-card {
+    padding: 1.5em;
+    background-color: var(--color-white);
+    border-radius: calc(var(--border-radius) * 1.5);
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: all var(--animation-smooth);
+  }
+
+  .category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(var(--color-dark-rgb), 0.1);
+    border-color: var(--color-primary);
+  }
+
+  .category-icon {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: calc(var(--border-radius) * 0.75);
+    margin-bottom: 1em;
+  }
+
+  .category-icon svg {
+    width: 1.5em;
+    height: 1.5em;
+    stroke: var(--color-white);
+  }
+
+  .category-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.5em;
+  }
+
+  .category-card p {
+    font-size: 0.85em;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  /* Products Grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5em;
+  }
+
+  /* Solutions Grid */
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+  }
+
+  @media screen and (max-width: 540px) {
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 2.5em;
+  }
+
+  /* CTA Section */
+  .section-cta-main {
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin-bottom: 0.5em;
+  }
+
+  .cta-content p {
+    font-size: 1.1em;
+    color: rgba(var(--color-white-rgb), 0.85);
+    margin-bottom: 1.5em;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  .cta-buttons :global(.btn.light .btn-content span) {
+    color: var(--color-primary);
+  }
+
+  .cta-buttons :global(.btn.outline .border-box) {
+    border-color: rgba(var(--color-white-rgb), 0.3);
+  }
+</style>

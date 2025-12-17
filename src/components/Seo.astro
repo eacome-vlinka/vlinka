@@ -1,0 +1,63 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    noindex?: boolean;
+    image?: string;
+}
+
+const { title, description, noindex, image } = Astro.props;
+
+const newTitle = title ? `${title} | VLINKA` : 'VLINKA - 智能音视频会议解决方案';
+
+const newDescription = description || 'VLINKA专注于提供先进的AI驱动音视频会议设备和解决方案，包括波束成形扬声器、阵列麦克风、天花板麦克风等专业会议设备。'
+
+const domain = "https://vlinka.com";
+
+const slug = Astro.url.pathname;
+
+const ogImage = image || "/images/products/SV50.jpg";
+
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>{newTitle}</title>
+<meta name="title" content={newTitle}/>
+<meta property="og:title" content={newTitle}/>
+<meta property="twitter:title" content={newTitle}/>
+
+<meta property="og:site_name" content="VLINKA" />
+<meta property="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href={`${domain}${slug}`} />
+<meta property="og:url" content={`${domain}${slug}`} />
+<meta property="twitter:url" content={`${domain}${slug}`} />
+
+<link rel="sitemap" href={`${domain}/sitemap-index.xml`} />
+
+<meta property="og:type" content="website" />
+
+{noindex &&
+   <meta name="robots" content="noindex">
+}
+
+<link rel="preload" href="/fonts/inter-v18-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/Manrope-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/Manrope-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="/images/favicon.svg" color="#00B894">
+
+<meta property="og:image" content={ogImage} />
+<meta property="twitter:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="description" content={newDescription} />
+<meta property="og:description" content={newDescription} />
+<meta property="twitter:description" content={newDescription} />
+
+<meta name="keywords" content="VLINKA, 会议设备, 阵列麦克风, 天花板麦克风, 波束成形, 视频会议, 智能会议, AI降噪, 音视频解决方案" />

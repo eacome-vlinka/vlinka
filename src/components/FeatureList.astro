@@ -1,0 +1,81 @@
+---
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  features: Feature[];
+}
+
+const { features } = Astro.props;
+---
+
+<div class="feature-list">
+  {features.map((feature) => (
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <h4 class="feature-title">{feature.title}</h4>
+        <p class="feature-description">{feature.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    background-color: var(--color-light);
+    border-radius: calc(var(--border-radius) * 0.75);
+  }
+
+  .feature-icon {
+    width: 2.5em;
+    height: 2.5em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: calc(var(--border-radius) * 0.5);
+  }
+
+  .feature-icon svg {
+    width: 1.2em;
+    height: 1.2em;
+    stroke: var(--color-white);
+  }
+
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+  }
+
+  .feature-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  .feature-description {
+    font-size: 0.85em;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+</style>

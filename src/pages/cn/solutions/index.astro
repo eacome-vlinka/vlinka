@@ -1,0 +1,122 @@
+---
+import Layout from 'layouts/Layout.astro';
+import SolutionCard from 'components/SolutionCard.astro';
+
+import solutionsData from 'json/SolutionsZh.json';
+
+const solutions = solutionsData.solutions;
+---
+
+<Layout
+  title="解决方案"
+  description="探索VLINKA针对不同场景的专业音视频会议解决方案，包括会议室、教室、培训中心等多种应用场景。"
+  navDarkMode={true}
+>
+  <!-- Page Header -->
+  <section class="page-header" data-theme-section="dark">
+    <div class="container">
+      <h1>解决方案</h1>
+      <p class="page-description">针对不同场景的专业音视频会议解决方案</p>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="section section-solutions" data-bg-section="light-tint">
+    <div class="container">
+      <div class="solutions-grid">
+        {solutions.map((solution) => (
+          <SolutionCard
+            id={solution.id}
+            title={solution.title}
+            description={solution.description}
+            link={`/cn/solutions/${solution.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta" data-bg-section="primary" data-theme-section="dark">
+    <div class="container">
+      <div class="cta-content">
+        <h2>需要定制化解决方案？</h2>
+        <p>我们的专业团队可以根据您的具体需求，提供量身定制的会议解决方案</p>
+        <a href="/cn/contact" class="btn primary xl">
+          <span class="btn-click">
+            <span class="btn-content">
+              <span class="btn-fill" style="background: var(--color-white);"></span>
+              <span style="color: var(--color-primary);">联系我们</span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: calc(var(--nav-bar-height) + var(--section-padding));
+    padding-bottom: var(--section-padding);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .page-header .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: 0.25em;
+  }
+
+  .page-description {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    max-width: 600px;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+  }
+
+  @media screen and (max-width: 540px) {
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-cta {
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin-bottom: 0.5em;
+  }
+
+  .cta-content p {
+    font-size: 1.1em;
+    color: rgba(var(--color-white-rgb), 0.85);
+    margin-bottom: 1.5em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

@@ -1,0 +1,240 @@
+---
+import Layout from 'layouts/Layout.astro';
+import FeatureList from 'components/FeatureList.astro';
+import ProductCard from 'components/ProductCard.astro';
+import Button from 'components/Button.astro';
+
+import productsData from 'json/ProductsEn.json';
+import categoriesData from 'json/CategoriesEn.json';
+
+export async function getStaticPaths() {
+  return productsData.products.map(product => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const category = categoriesData.categories.find(c => c.id === product.category);
+const relatedProducts = productsData.products
+  .filter(p => p.category === product.category && p.id !== product.id)
+  .slice(0, 3);
+---
+
+<Layout
+  title={product.fullName}
+  description={product.description}
+  navDarkMode={true}
+  image={product.image}
+>
+  <section class="product-hero" data-theme-section="dark">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/en/">Home</a>
+        <span class="separator">/</span>
+        <a href="/en/products">Products</a>
+        <span class="separator">/</span>
+        <span class="current">{product.name}</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-image">
+          <img src={product.image} alt={product.fullName} />
+        </div>
+        <div class="hero-content">
+          <span class="product-category">{category?.name}</span>
+          <h1>{product.fullName}</h1>
+          <p class="product-description">{product.description}</p>
+          <div class="product-actions">
+            <Button text="Contact Us" link="/en/contact" variant="primary" size="xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-features" data-bg-section="light">
+    <div class="container">
+      <div class="features-grid">
+        <div class="features-header">
+          <h2>Features</h2>
+          <p>Discover the core features and technical advantages of {product.name}</p>
+        </div>
+        <div class="features-content">
+          <FeatureList features={product.features} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-applications" data-bg-section="light-tint">
+    <div class="container">
+      <h2>Applications</h2>
+      <div class="applications-list">
+        {product.applications.map((app: string) => (
+          <div class="application-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{app}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {relatedProducts.length > 0 && (
+    <section class="section section-related" data-bg-section="light">
+      <div class="container">
+        <h2>Related Products</h2>
+        <div class="related-grid">
+          {relatedProducts.map((relProduct) => (
+            <ProductCard
+              id={relProduct.id}
+              name={relProduct.name}
+              fullName={relProduct.fullName}
+              category={relProduct.category}
+              categoryName={category?.name || ''}
+              shortDescription={relProduct.shortDescription}
+              image={relProduct.image}
+              link={`/en/products/${relProduct.slug}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-cta" data-bg-section="dark" data-theme-section="dark">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Interested in {product.name}?</h2>
+        <p>Contact us for more product information and customized solutions</p>
+        <Button text="Contact Us" link="/en/contact" variant="primary" size="xl" />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .product-hero {
+    padding-top: calc(var(--nav-bar-height) + 2em);
+    padding-bottom: var(--section-padding);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    position: relative;
+  }
+
+  .product-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .product-hero .container { position: relative; z-index: 2; }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+
+  .breadcrumb a { color: var(--color-text-light); text-decoration: none; transition: color var(--animation-primary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb .separator { color: rgba(var(--color-white-rgb), 0.3); }
+  .breadcrumb .current { color: var(--color-white); }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2em; }
+  }
+
+  .hero-image {
+    background-color: var(--color-white);
+    border-radius: calc(var(--border-radius) * 2);
+    overflow: hidden;
+    padding: 2em;
+  }
+
+  .hero-image img { width: 100%; height: auto; object-fit: contain; }
+
+  .product-category {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5em;
+  }
+
+  .hero-content h1 {
+    color: var(--color-white);
+    font-size: calc(var(--title-size) * 0.5);
+    margin-bottom: 0.5em;
+  }
+
+  .product-description {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5em;
+  }
+
+  .product-actions { display: flex; gap: 1em; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3em;
+  }
+
+  @media screen and (max-width: 860px) {
+    .features-grid { grid-template-columns: 1fr; gap: 1.5em; }
+  }
+
+  .features-header h2 { margin-bottom: 0.5em; }
+  .features-header p { color: var(--color-text); }
+
+  .section-applications h2 { margin-bottom: 1.5em; }
+
+  .applications-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .application-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.75em 1.25em;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+  }
+
+  .application-tag svg { width: 1em; height: 1em; stroke: var(--color-primary); }
+  .application-tag span { font-size: 0.9em; color: var(--color-dark); }
+
+  .section-related h2 { margin-bottom: 1.5em; }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5em;
+  }
+
+  .section-cta { text-align: center; }
+  .cta-content h2 { color: var(--color-white); margin-bottom: 0.5em; }
+  .cta-content p { color: var(--color-text-light); margin-bottom: 1.5em; }
+</style>

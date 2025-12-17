@@ -1,0 +1,252 @@
+{
+  "products": [
+    {
+      "id": "sv50",
+      "slug": "sv50",
+      "name": "SV50",
+      "fullName": "SV50 高保真波束成形扬声器",
+      "category": "beamforming-speakerphone",
+      "description": "VLINKA高保真波束成形扬声器电话SV50集成了AI技术和先进的语音技术。SV50具有创新的AI语音拾取、AI降噪、AI去混响、智能回声消除、3D音频和其他先进的智能语音技术。",
+      "shortDescription": "AI驱动的高保真波束成形扬声器电话",
+      "image": "/images/products/SV50.jpg",
+      "features": [
+        { "title": "AI语音拾取", "description": "智能识别并拾取目标语音" },
+        { "title": "AI降噪", "description": "有效降低环境噪音" },
+        { "title": "AI去混响", "description": "消除房间混响效应" },
+        { "title": "智能回声消除", "description": "提供清晰的通话体验" },
+        { "title": "3D音频", "description": "营造沉浸式音频体验" }
+      ],
+      "applications": ["会议室", "商务会议", "远程协作"],
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "sv50w",
+      "slug": "sv50w",
+      "name": "SV50W",
+      "fullName": "SV50W 高保真波束成形扬声器",
+      "category": "beamforming-speakerphone",
+      "description": "SV50W是一款高保真波束成形扬声器电话，采用精准AI语音拾取技术，可在指定区域内精确拾音，有效屏蔽区域外噪音。支持无线级联，配备AI降噪和AI去混响技术。",
+      "shortDescription": "精准定向拾音波束成形扬声器",
+      "image": "/images/products/SV50W.jpg",
+      "features": [
+        { "title": "精准AI语音拾取", "description": "在指定区域内精确拾音" },
+        { "title": "无线级联", "description": "支持多设备无线连接扩展" },
+        { "title": "AI降噪", "description": "有效降低环境噪音" },
+        { "title": "AI去混响", "description": "消除房间混响效应" }
+      ],
+      "applications": ["会议室", "领导会议", "需要精确拾音的场景"],
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "ta1",
+      "slug": "ta1",
+      "name": "TA1",
+      "fullName": "TA1 波束成形扬声器",
+      "category": "beamforming-speakerphone",
+      "description": "TA1波束成形扬声器电话配备AI降噪、AI去混响、AI语音拾取和全双工回声消除技术，专为具有挑战性的声学环境设计，适用于玻璃墙会议室。",
+      "shortDescription": "专业级波束成形扬声器",
+      "image": "/images/products/TA1.jpg",
+      "features": [
+        { "title": "AI降噪", "description": "有效降低环境噪音" },
+        { "title": "AI去混响", "description": "消除房间混响效应" },
+        { "title": "AI语音拾取", "description": "智能识别并拾取目标语音" },
+        { "title": "全双工回声消除", "description": "提供清晰的双向通话" }
+      ],
+      "applications": ["商务会议", "远程办公", "玻璃墙会议室"],
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "mc20",
+      "slug": "mc20",
+      "name": "MC20",
+      "fullName": "MC20 AI阵列麦克风",
+      "category": "ai-array-microphone",
+      "description": "MC20系列具有高清麦克风，可360度拾取语音，最佳拾音范围4米。同时支持定向覆盖功能，可以拾取指定区域内的语音并屏蔽区域外的干扰对话和噪音，AI去混响功能可以有效消除房间回声。",
+      "shortDescription": "360度全方位拾音阵列麦克风",
+      "image": "/images/products/MC20.jpg",
+      "features": [
+        { "title": "360度拾音", "description": "全方位捕捉语音" },
+        { "title": "4米拾音范围", "description": "最佳拾音距离4米" },
+        { "title": "定向覆盖", "description": "拾取指定区域内的语音" },
+        { "title": "AI去混响", "description": "有效消除房间回声" }
+      ],
+      "applications": ["会议室", "教室", "小型会议空间"],
+      "featured": true,
+      "order": 4
+    },
+    {
+      "id": "mc20plus",
+      "slug": "mc20plus",
+      "name": "MC20Plus",
+      "fullName": "MC20Plus AI阵列麦克风",
+      "category": "ai-array-microphone",
+      "description": "MC20Plus配备专业麦克风支架，内置8个麦克风，最佳拾音距离4米，120度定向覆盖，支持最多7个有线级联单元。",
+      "shortDescription": "专业版120度定向阵列麦克风",
+      "image": "/images/products/MC20-plus.jpg",
+      "features": [
+        { "title": "专业麦克风支架", "description": "便于桌面或会议室布置" },
+        { "title": "8个内置麦克风", "description": "高质量多麦克风阵列" },
+        { "title": "120度定向覆盖", "description": "精准定向拾音区域" },
+        { "title": "支持7个级联", "description": "可扩展大型会议室" }
+      ],
+      "applications": ["会议室", "教室", "演讲厅"],
+      "featured": false,
+      "order": 5
+    },
+    {
+      "id": "mc20r",
+      "slug": "mc20r",
+      "name": "MC20R",
+      "fullName": "MC20R AI阵列麦克风",
+      "category": "ai-array-microphone",
+      "description": "MC20R采用VLINKA无感增音技术，内置DSP，拾音距离超过1.2米，即插即用功能简化使用。",
+      "shortDescription": "远距离拾音阵列麦克风",
+      "image": "/images/products/MC20R.jpg",
+      "features": [
+        { "title": "无感增音技术", "description": "VLINKA专利技术" },
+        { "title": "内置DSP", "description": "数字信号处理器" },
+        { "title": "1.2米+拾音距离", "description": "远距离清晰拾音" },
+        { "title": "即插即用", "description": "简化安装和使用" }
+      ],
+      "applications": ["会议室", "演讲厅", "教室"],
+      "featured": false,
+      "order": 6
+    },
+    {
+      "id": "dmc500",
+      "slug": "dmc500",
+      "name": "DMC500",
+      "fullName": "DMC500 AI天花板阵列麦克风",
+      "category": "ceiling-array-microphone",
+      "description": "DMC500天花板麦克风集成IP语音技术和PoE供电，支持通过IP无缝级联多个单元，提供简单、经济、灵活的解决方案。无需调音台或DSP，内置20个麦克风，8米拾音范围。",
+      "shortDescription": "IP级联天花板阵列麦克风",
+      "image": "/images/products/DMC500.jpg",
+      "features": [
+        { "title": "IP语音技术", "description": "支持网络传输语音" },
+        { "title": "PoE供电", "description": "网线供电简化布线" },
+        { "title": "20个麦克风", "description": "高清多麦克风阵列" },
+        { "title": "8米拾音范围", "description": "大范围有效拾音" }
+      ],
+      "applications": ["中小型企业会议室", "政府会议室", "中小学教室"],
+      "featured": true,
+      "order": 7
+    },
+    {
+      "id": "dmc600",
+      "slug": "dmc600",
+      "name": "DMC600",
+      "fullName": "DMC600 高端天花板阵列麦克风",
+      "category": "ceiling-array-microphone",
+      "description": "DMC600配备68个高清数字麦克风，采用先进波束成形技术，8米超精准拾音，支持IP语音技术和PoE供电，集成AI降噪、AI去混响和AI语音定位功能。",
+      "shortDescription": "68麦克风高端天花板解决方案",
+      "image": "/images/products/DMC600.jpg",
+      "features": [
+        { "title": "68个高清麦克风", "description": "旗舰级麦克风阵列" },
+        { "title": "先进波束成形", "description": "精准声音定位技术" },
+        { "title": "8米超精准拾音", "description": "大范围精确拾音" },
+        { "title": "AI语音定位", "description": "智能识别语音方向" }
+      ],
+      "applications": ["高端会议环境", "大型企业会议室", "政府会议厅"],
+      "featured": false,
+      "order": 8
+    },
+    {
+      "id": "dmc660",
+      "slug": "dmc660",
+      "name": "DMC660",
+      "fullName": "DMC660 旗舰天花板阵列麦克风",
+      "category": "ceiling-array-microphone",
+      "description": "DMC660配备104个高清麦克风，8米拾音范围，48KHz高保真音频采样，先进波束成形技术，AI声障技术可自由定义语音捕捉区域。通过腾讯Inside认证，与VooV Meeting完全集成。",
+      "shortDescription": "104麦克风旗舰级天花板解决方案",
+      "image": "/images/products/DMC660.jpg",
+      "features": [
+        { "title": "104个高清麦克风", "description": "业界领先麦克风数量" },
+        { "title": "48KHz高保真采样", "description": "极致音频品质" },
+        { "title": "AI声障技术", "description": "自定义语音捕捉区域" },
+        { "title": "腾讯Inside认证", "description": "VooV Meeting完全集成" }
+      ],
+      "applications": ["高端会议环境", "大型企业会议室", "政府会议厅"],
+      "featured": true,
+      "order": 9
+    },
+    {
+      "id": "a500",
+      "slug": "a500",
+      "name": "A500",
+      "fullName": "A500 智能会议系统",
+      "category": "smart-conference-system",
+      "description": "A500智能会议系统内置麦克风阵列，6米语音拾音距离，采用分布式技术，RJ45网线级联支持最多2个扩展扬声器，支持壁挂安装。",
+      "shortDescription": "分布式智能会议系统",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "内置麦克风阵列", "description": "集成多麦克风系统" },
+        { "title": "6米拾音距离", "description": "大范围有效拾音" },
+        { "title": "分布式技术", "description": "灵活扩展系统" },
+        { "title": "RJ45级联", "description": "支持2个扩展单元" }
+      ],
+      "applications": ["中大型会议室", "教室", "不规则场景"],
+      "featured": false,
+      "order": 10
+    },
+    {
+      "id": "a500w",
+      "slug": "a500w",
+      "name": "A500W",
+      "fullName": "A500W 无线智能会议系统",
+      "category": "smart-conference-system",
+      "description": "A500W智能会议系统采用先进的分布式音频技术、多级联技术、数字麦克风阵列技术、内置5A核心音频算法和多点无线麦克风技术，打造多功能新型会议系统。",
+      "shortDescription": "无线分布式智能会议系统",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "分布式音频技术", "description": "先进音频处理和分布" },
+        { "title": "多级联技术", "description": "支持多单元级联扩展" },
+        { "title": "5A核心算法", "description": "优化音频处理性能" },
+        { "title": "无线麦克风", "description": "多点无线麦克风接入" }
+      ],
+      "applications": ["高校教学", "教学培训中心", "企事业单位会议室"],
+      "featured": true,
+      "order": 11
+    },
+    {
+      "id": "va500",
+      "slug": "va500",
+      "name": "VA500",
+      "fullName": "VA500 有线视频条",
+      "category": "video-bar",
+      "description": "VA500是一款智能一体化会议系统，集成4K超高清摄像头、智能麦克风阵列和高保真扬声器。内置800万像素CMOS传感器，120°视场角，AI人脸检测、人体跟踪和自动框选功能，6米拾音距离。",
+      "shortDescription": "4K一体化视频会议系统",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "4K超高清摄像", "description": "800万像素CMOS" },
+        { "title": "120°视场角", "description": "宽广覆盖范围" },
+        { "title": "AI人脸检测", "description": "智能人脸和人体跟踪" },
+        { "title": "6米拾音", "description": "远距离语音拾取" }
+      ],
+      "applications": ["中大型会议室", "教室", "培训室"],
+      "featured": false,
+      "order": 12
+    },
+    {
+      "id": "va500w",
+      "slug": "va500w",
+      "name": "VA500W",
+      "fullName": "VA500W 无线视频条",
+      "category": "video-bar",
+      "description": "VA500W无线视频条具备6米长距离语音拾取，行业领先的去混响技术，智能降噪，全双工深度回声消除，多级联功能和POE网络供电。",
+      "shortDescription": "无线一体化视频会议系统",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "6米长距离拾音", "description": "远距离语音拾取" },
+        { "title": "领先去混响技术", "description": "行业领先技术" },
+        { "title": "全双工回声消除", "description": "深度回声消除" },
+        { "title": "POE供电", "description": "网络供电简化布线" }
+      ],
+      "applications": ["企业会议室", "学校", "学习中心", "混合办公"],
+      "featured": false,
+      "order": 13
+    }
+  ]
+}

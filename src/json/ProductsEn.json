@@ -1,0 +1,252 @@
+{
+  "products": [
+    {
+      "id": "sv50",
+      "slug": "sv50",
+      "name": "SV50",
+      "fullName": "SV50 Hi-Fi Beamforming Speakerphone",
+      "category": "beamforming-speakerphone",
+      "description": "VLINKA Hi-Fi Beamforming Speakerphone SV50 integrates AI technology and advanced voice technology. SV50 features innovative AI voice pickup, AI noise reduction, AI dereverberation, smart echo cancellation, 3D audio and other advanced smart voice technologies.",
+      "shortDescription": "AI-powered Hi-Fi beamforming speakerphone",
+      "image": "/images/products/SV50.jpg",
+      "features": [
+        { "title": "AI Voice Pickup", "description": "Intelligent target voice recognition and capture" },
+        { "title": "AI Noise Reduction", "description": "Effective environmental noise reduction" },
+        { "title": "AI Dereverberation", "description": "Eliminates room reverberation effects" },
+        { "title": "Smart Echo Cancellation", "description": "Provides clear call experience" },
+        { "title": "3D Audio", "description": "Creates immersive audio experience" }
+      ],
+      "applications": ["Conference rooms", "Business meetings", "Remote collaboration"],
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "sv50w",
+      "slug": "sv50w",
+      "name": "SV50W",
+      "fullName": "SV50W Hi-Fi Beamforming Speakerphone",
+      "category": "beamforming-speakerphone",
+      "description": "SV50W is a Hi-Fi beamforming speakerphone featuring precise AI voice pickup technology that accurately captures audio in designated areas while blocking noise outside the zone. Supports wireless cascade with AI noise reduction and AI dereverberation.",
+      "shortDescription": "Precise directional beamforming speakerphone",
+      "image": "/images/products/SV50W.jpg",
+      "features": [
+        { "title": "Precise AI Voice Pickup", "description": "Accurate audio capture in designated areas" },
+        { "title": "Wireless Cascade", "description": "Supports multi-device wireless expansion" },
+        { "title": "AI Noise Reduction", "description": "Effective environmental noise reduction" },
+        { "title": "AI Dereverberation", "description": "Eliminates room reverberation effects" }
+      ],
+      "applications": ["Conference rooms", "Executive meetings", "Precision audio scenarios"],
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "ta1",
+      "slug": "ta1",
+      "name": "TA1",
+      "fullName": "TA1 Beamforming Speakerphone",
+      "category": "beamforming-speakerphone",
+      "description": "TA1 beamforming speakerphone features AI noise reduction, AI dereverberation, AI voice pickup and full-duplex echo cancellation, designed for challenging acoustic environments including glass-walled conference rooms.",
+      "shortDescription": "Professional beamforming speakerphone",
+      "image": "/images/products/TA1.jpg",
+      "features": [
+        { "title": "AI Noise Reduction", "description": "Effective environmental noise reduction" },
+        { "title": "AI Dereverberation", "description": "Eliminates room reverberation effects" },
+        { "title": "AI Voice Pickup", "description": "Intelligent target voice recognition" },
+        { "title": "Full-Duplex Echo Cancellation", "description": "Clear two-way communication" }
+      ],
+      "applications": ["Business meetings", "Remote work", "Glass-walled conference rooms"],
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "mc20",
+      "slug": "mc20",
+      "name": "MC20",
+      "fullName": "MC20 AI Array Microphone",
+      "category": "ai-array-microphone",
+      "description": "MC20 series features HD microphones with 360-degree voice pickup and 4-meter optimal range. Supports directional coverage to capture audio in designated areas while blocking external noise. AI dereverberation effectively eliminates room echoes.",
+      "shortDescription": "360-degree omnidirectional array microphone",
+      "image": "/images/products/MC20.jpg",
+      "features": [
+        { "title": "360-Degree Pickup", "description": "Omnidirectional voice capture" },
+        { "title": "4-Meter Range", "description": "Optimal 4-meter pickup distance" },
+        { "title": "Directional Coverage", "description": "Captures audio in designated areas" },
+        { "title": "AI Dereverberation", "description": "Effectively eliminates room echoes" }
+      ],
+      "applications": ["Conference rooms", "Classrooms", "Small meeting spaces"],
+      "featured": true,
+      "order": 4
+    },
+    {
+      "id": "mc20plus",
+      "slug": "mc20plus",
+      "name": "MC20Plus",
+      "fullName": "MC20Plus AI Array Microphone",
+      "category": "ai-array-microphone",
+      "description": "MC20Plus features professional microphone stand, 8 built-in microphones, 4-meter optimal pickup distance, 120-degree directional coverage, and supports up to 7 wired cascade units.",
+      "shortDescription": "Professional 120-degree directional array microphone",
+      "image": "/images/products/MC20-plus.jpg",
+      "features": [
+        { "title": "Professional Stand", "description": "Convenient desktop or room placement" },
+        { "title": "8 Built-in Microphones", "description": "High-quality multi-microphone array" },
+        { "title": "120-Degree Coverage", "description": "Precise directional pickup area" },
+        { "title": "7-Unit Cascade", "description": "Expandable for large rooms" }
+      ],
+      "applications": ["Conference rooms", "Classrooms", "Lecture halls"],
+      "featured": false,
+      "order": 5
+    },
+    {
+      "id": "mc20r",
+      "slug": "mc20r",
+      "name": "MC20R",
+      "fullName": "MC20R AI Array Microphone",
+      "category": "ai-array-microphone",
+      "description": "MC20R features VLINKA imperceptible sound enhancement technology, built-in DSP, 1.2+ meter pickup distance, and plug-and-play functionality for simplified use.",
+      "shortDescription": "Long-distance pickup array microphone",
+      "image": "/images/products/MC20R.jpg",
+      "features": [
+        { "title": "Sound Enhancement", "description": "VLINKA patented technology" },
+        { "title": "Built-in DSP", "description": "Digital signal processor" },
+        { "title": "1.2m+ Pickup Distance", "description": "Clear long-distance audio capture" },
+        { "title": "Plug-and-Play", "description": "Simplified installation and use" }
+      ],
+      "applications": ["Conference rooms", "Lecture halls", "Classrooms"],
+      "featured": false,
+      "order": 6
+    },
+    {
+      "id": "dmc500",
+      "slug": "dmc500",
+      "name": "DMC500",
+      "fullName": "DMC500 AI Ceiling Array Microphone",
+      "category": "ceiling-array-microphone",
+      "description": "DMC500 ceiling microphone integrates IP voice technology and PoE power supply, supporting seamless IP cascade of multiple units. Simple, economical and flexible solution without DSP or mixer. Features 20 microphones with 8-meter pickup range.",
+      "shortDescription": "IP cascade ceiling array microphone",
+      "image": "/images/products/DMC500.jpg",
+      "features": [
+        { "title": "IP Voice Technology", "description": "Network voice transmission support" },
+        { "title": "PoE Power Supply", "description": "Simplified wiring via Ethernet" },
+        { "title": "20 Microphones", "description": "HD multi-microphone array" },
+        { "title": "8-Meter Range", "description": "Large area effective pickup" }
+      ],
+      "applications": ["SMB conference rooms", "Government meeting rooms", "School classrooms"],
+      "featured": true,
+      "order": 7
+    },
+    {
+      "id": "dmc600",
+      "slug": "dmc600",
+      "name": "DMC600",
+      "fullName": "DMC600 High-End Ceiling Array Microphone",
+      "category": "ceiling-array-microphone",
+      "description": "DMC600 features 68 HD digital microphones with advanced beamforming technology, 8-meter ultra-precise pickup, IP voice technology and PoE power supply, integrated AI noise reduction, AI dereverberation and AI voice localization.",
+      "shortDescription": "68-microphone high-end ceiling solution",
+      "image": "/images/products/DMC600.jpg",
+      "features": [
+        { "title": "68 HD Microphones", "description": "Flagship microphone array" },
+        { "title": "Advanced Beamforming", "description": "Precise sound localization technology" },
+        { "title": "8-Meter Ultra-Precise", "description": "Large area precise pickup" },
+        { "title": "AI Voice Localization", "description": "Intelligent voice direction detection" }
+      ],
+      "applications": ["High-end conference environments", "Large enterprise conference rooms", "Government conference halls"],
+      "featured": false,
+      "order": 8
+    },
+    {
+      "id": "dmc660",
+      "slug": "dmc660",
+      "name": "DMC660",
+      "fullName": "DMC660 Flagship Ceiling Array Microphone",
+      "category": "ceiling-array-microphone",
+      "description": "DMC660 features 104 HD microphones, 8-meter pickup range, 48KHz hi-fi audio sampling, advanced beamforming technology, AI sound barrier technology for customizable voice capture areas. Tencent Inside certified with VooV Meeting integration.",
+      "shortDescription": "104-microphone flagship ceiling solution",
+      "image": "/images/products/DMC660.jpg",
+      "features": [
+        { "title": "104 HD Microphones", "description": "Industry-leading microphone count" },
+        { "title": "48KHz Hi-Fi Sampling", "description": "Ultimate audio quality" },
+        { "title": "AI Sound Barrier", "description": "Customizable voice capture areas" },
+        { "title": "Tencent Certified", "description": "VooV Meeting full integration" }
+      ],
+      "applications": ["High-end conference environments", "Large enterprise conference rooms", "Government conference halls"],
+      "featured": true,
+      "order": 9
+    },
+    {
+      "id": "a500",
+      "slug": "a500",
+      "name": "A500",
+      "fullName": "A500 Smart Conference System",
+      "category": "smart-conference-system",
+      "description": "A500 smart conference system features built-in microphone array, 6-meter voice pickup distance, distributed technology, RJ45 network cascade supporting up to 2 extension speakers, and wall-mounting capability.",
+      "shortDescription": "Distributed smart conference system",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "Built-in Microphone Array", "description": "Integrated multi-microphone system" },
+        { "title": "6-Meter Pickup", "description": "Large area effective pickup" },
+        { "title": "Distributed Technology", "description": "Flexible system expansion" },
+        { "title": "RJ45 Cascade", "description": "Supports 2 extension units" }
+      ],
+      "applications": ["Medium to large conference rooms", "Classrooms", "Irregular scenarios"],
+      "featured": false,
+      "order": 10
+    },
+    {
+      "id": "a500w",
+      "slug": "a500w",
+      "name": "A500W",
+      "fullName": "A500W Wireless Smart Conference System",
+      "category": "smart-conference-system",
+      "description": "A500W smart conference system features advanced distributed audio technology, multi-cascade technology, digital microphone array technology, built-in 5A core audio algorithm and multi-point wireless microphone technology for versatile conference applications.",
+      "shortDescription": "Wireless distributed smart conference system",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "Distributed Audio Technology", "description": "Advanced audio processing and distribution" },
+        { "title": "Multi-Cascade Technology", "description": "Supports multi-unit cascade expansion" },
+        { "title": "5A Core Algorithm", "description": "Optimized audio processing" },
+        { "title": "Wireless Microphone", "description": "Multi-point wireless microphone support" }
+      ],
+      "applications": ["Universities", "Training centers", "Enterprise conference rooms"],
+      "featured": true,
+      "order": 11
+    },
+    {
+      "id": "va500",
+      "slug": "va500",
+      "name": "VA500",
+      "fullName": "VA500 Wired Video Bar",
+      "category": "video-bar",
+      "description": "VA500 is an all-in-one smart conference system integrating 4K ultra-HD camera, smart microphone array and hi-fi speaker. Features 8-megapixel CMOS sensor, 120° field of view, AI face detection, body tracking and auto-framing, with 6-meter pickup distance.",
+      "shortDescription": "4K all-in-one video conference system",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "4K Ultra-HD Camera", "description": "8-megapixel CMOS sensor" },
+        { "title": "120° Field of View", "description": "Wide coverage range" },
+        { "title": "AI Face Detection", "description": "Smart face and body tracking" },
+        { "title": "6-Meter Pickup", "description": "Long-distance voice capture" }
+      ],
+      "applications": ["Medium to large conference rooms", "Classrooms", "Training rooms"],
+      "featured": false,
+      "order": 12
+    },
+    {
+      "id": "va500w",
+      "slug": "va500w",
+      "name": "VA500W",
+      "fullName": "VA500W Wireless Video Bar",
+      "category": "video-bar",
+      "description": "VA500W wireless video bar features 6-meter long-distance voice pickup, industry-leading dereverberation technology, intelligent noise reduction, full-duplex deep echo cancellation, multi-cascade functionality and POE network power supply.",
+      "shortDescription": "Wireless all-in-one video conference system",
+      "image": "/images/products/A500W.jpg",
+      "features": [
+        { "title": "6-Meter Long-Distance", "description": "Long-distance voice pickup" },
+        { "title": "Leading Dereverberation", "description": "Industry-leading technology" },
+        { "title": "Full-Duplex Echo Cancellation", "description": "Deep echo cancellation" },
+        { "title": "POE Power Supply", "description": "Simplified network wiring" }
+      ],
+      "applications": ["Enterprise conference rooms", "Schools", "Learning centers", "Hybrid offices"],
+      "featured": false,
+      "order": 13
+    }
+  ]
+}

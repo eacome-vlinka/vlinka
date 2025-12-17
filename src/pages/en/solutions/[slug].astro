@@ -1,0 +1,163 @@
+---
+import Layout from 'layouts/Layout.astro';
+import ProductCard from 'components/ProductCard.astro';
+import Button from 'components/Button.astro';
+
+import solutionsData from 'json/SolutionsEn.json';
+import productsData from 'json/ProductsEn.json';
+import categoriesData from 'json/CategoriesEn.json';
+
+export async function getStaticPaths() {
+  return solutionsData.solutions.map(solution => ({
+    params: { slug: solution.slug },
+    props: { solution },
+  }));
+}
+
+const { solution } = Astro.props;
+const relatedProducts = productsData.products.filter(p => solution.relatedProducts.includes(p.id));
+---
+
+<Layout title={solution.title} description={solution.description} navDarkMode={true}>
+  <section class="solution-hero" data-theme-section="dark">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/en/">Home</a>
+        <span class="separator">/</span>
+        <a href="/en/solutions">Solutions</a>
+        <span class="separator">/</span>
+        <span class="current">{solution.title}</span>
+      </div>
+      <div class="hero-content">
+        <span class="solution-subtitle">{solution.subtitle}</span>
+        <h1>{solution.title}</h1>
+        <p class="solution-description">{solution.fullDescription}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-advantages" data-bg-section="light">
+    <div class="container">
+      <h2>Key Advantages</h2>
+      <div class="advantages-grid">
+        {solution.advantages.map((advantage: { title: string; description: string }) => (
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3>{advantage.title}</h3>
+            <p>{advantage.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-applications" data-bg-section="light-tint">
+    <div class="container">
+      <h2>Applications</h2>
+      <div class="applications-list">
+        {solution.applications.map((app: string) => (
+          <div class="application-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>{app}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {relatedProducts.length > 0 && (
+    <section class="section section-related" data-bg-section="light">
+      <div class="container">
+        <h2>Related Products</h2>
+        <p class="section-description">Products suitable for this solution</p>
+        <div class="related-grid">
+          {relatedProducts.map((product) => {
+            const category = categoriesData.categories.find(c => c.id === product.category);
+            return (
+              <ProductCard
+                id={product.id}
+                name={product.name}
+                fullName={product.fullName}
+                category={product.category}
+                categoryName={category?.name || ''}
+                shortDescription={product.shortDescription}
+                image={product.image}
+                link={`/en/products/${product.slug}`}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-cta" data-bg-section="dark" data-theme-section="dark">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Want to Learn More?</h2>
+        <p>Contact us for customized solutions and professional consultation</p>
+        <Button text="Contact Us" link="/en/contact" variant="primary" size="xl" />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .solution-hero {
+    padding-top: calc(var(--nav-bar-height) + 2em);
+    padding-bottom: var(--section-padding);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-tint) 100%);
+    position: relative;
+  }
+
+  .solution-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .solution-hero .container { position: relative; z-index: 2; }
+
+  .breadcrumb { display: flex; align-items: center; gap: 0.5em; font-size: 0.85em; margin-bottom: 2em; }
+  .breadcrumb a { color: var(--color-text-light); text-decoration: none; transition: color var(--animation-primary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb .separator { color: rgba(var(--color-white-rgb), 0.3); }
+  .breadcrumb .current { color: var(--color-white); }
+
+  .hero-content { max-width: 800px; }
+  .solution-subtitle { display: inline-block; font-size: 0.9em; font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5em; }
+  .hero-content h1 { color: var(--color-white); margin-bottom: 0.5em; }
+  .solution-description { font-size: 1.1em; color: var(--color-text-light); line-height: 1.7; }
+
+  .section-advantages h2 { margin-bottom: 1.5em; }
+  .advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; }
+
+  .advantage-card { padding: 1.5em; background-color: var(--color-white); border-radius: calc(var(--border-radius) * 1.5); border: 1px solid var(--color-border); }
+  .advantage-icon { width: 2.5em; height: 2.5em; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: calc(var(--border-radius) * 0.5); margin-bottom: 1em; }
+  .advantage-icon svg { width: 1.2em; height: 1.2em; stroke: var(--color-white); }
+  .advantage-card h3 { font-family: 'Manrope', sans-serif; font-size: 1em; font-weight: 600; color: var(--color-dark); margin-bottom: 0.5em; }
+  .advantage-card p { font-size: 0.9em; color: var(--color-text); line-height: 1.5; }
+
+  .section-applications h2 { margin-bottom: 1.5em; }
+  .applications-list { display: flex; flex-wrap: wrap; gap: 1em; }
+  .application-tag { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.75em 1.25em; background-color: var(--color-white); border-radius: var(--border-radius); border: 1px solid var(--color-border); }
+  .application-tag svg { width: 1.2em; height: 1.2em; stroke: var(--color-primary); }
+  .application-tag span { font-size: 0.9em; color: var(--color-dark); }
+
+  .section-related h2 { margin-bottom: 0.5em; }
+  .section-description { color: var(--color-text); margin-bottom: 1.5em; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5em; }
+
+  .section-cta { text-align: center; }
+  .cta-content h2 { color: var(--color-white); margin-bottom: 0.5em; }
+  .cta-content p { color: var(--color-text-light); margin-bottom: 1.5em; }
+</style>

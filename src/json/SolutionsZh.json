@@ -1,0 +1,40 @@
+{
+  "solutions": [
+    {
+      "id": "mc20-application",
+      "slug": "mc20-application-solution",
+      "title": "MC20 应用解决方案",
+      "subtitle": "专业音频拾取解决方案",
+      "date": "2024-05-29",
+      "description": "MC20利用多麦克风阵列和波束成形技术，提供异常清晰自然的语音拾取，具有出色的降噪能力。在玻璃房间和高天花板空间中同样有效。",
+      "fullDescription": "MC20系列阵列麦克风采用先进的多麦克风阵列设计和波束成形技术，能够在各种复杂声学环境中提供清晰、自然的语音拾取效果。无论是在玻璃幕墙会议室还是高天花板会议厅，MC20都能有效消除环境噪音和混响干扰，确保每一个参会者的声音都能被清晰捕捉和传输。",
+      "advantages": [
+        { "title": "多麦克风阵列", "description": "全方位捕捉语音，无死角覆盖" },
+        { "title": "波束成形技术", "description": "精确定位和拾取目标语音" },
+        { "title": "出色降噪能力", "description": "有效消除环境噪音干扰" },
+        { "title": "适应复杂环境", "description": "在玻璃房间和高天花板空间同样表现出色" }
+      ],
+      "applications": ["玻璃幕墙会议室", "高天花板会议厅", "开放式办公空间", "教室和演讲厅"],
+      "relatedProducts": ["mc20", "mc20plus", "mc20r"],
+      "featured": true
+    },
+    {
+      "id": "array-microphone-mc20",
+      "slug": "array-microphone-mc20-solution",
+      "title": "阵列麦克风 MC20 解决方案",
+      "subtitle": "先进音频拾取技术方案",
+      "date": "2024-05-24",
+      "description": "采用先进音频拾取技术，适用于各种会议和教学场景，具备多麦克风阵列设计、波束成形技术和智能音频处理功能。",
+      "fullDescription": "MC20阵列麦克风解决方案专为现代会议和教学环境设计，集成了多项先进音频技术。通过多麦克风阵列设计实现全方位声音捕捉，波束成形技术确保对目标发言者的精准拾音，智能音频处理功能自动优化音质，适应各种挑战性的声学环境。",
+      "advantages": [
+        { "title": "多麦克风阵列设计", "description": "实现全方位声音捕捉" },
+        { "title": "波束成形技术", "description": "精准定位目标发言者" },
+        { "title": "智能音频处理", "description": "自动优化音质表现" },
+        { "title": "适应挑战环境", "description": "有效应对复杂声学条件" }
+      ],
+      "applications": ["企业会议室", "教育培训中心", "视频会议场景", "远程协作环境"],
+      "relatedProducts": ["mc20", "mc20plus"],
+      "featured": true
+    }
+  ]
+}
